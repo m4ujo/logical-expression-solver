@@ -144,6 +144,9 @@ namespace karnaugh_map_solver
       dgv__map.DefaultCellStyle.BackColor = ColorTranslator.FromHtml($"{COLORS[cmode]["bg1"]}");
       dgv__map.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml($"{COLORS[cmode]["fg"]}");
       dgv__map.EnableHeadersVisualStyles = false;
+
+      lbl__change_mode.BackColor = ColorTranslator.FromHtml($"{COLORS[cmode]["bg0"]}");
+      lbl__exit.BackColor = ColorTranslator.FromHtml($"{COLORS[cmode]["bg0"]}");
     }
 
     #endregion
@@ -388,6 +391,24 @@ namespace karnaugh_map_solver
     private void btn__op_result_Click(object sender, EventArgs e)
     {
       Calculate();
+    }
+
+    private void panel__sidebar__mouse_leave(object sender, EventArgs e)
+    {
+      initColorMode();
+      if (cmode == 1)
+        (sender as Button).BackColor = Color.FromArgb(0, 0, 0);
+      else
+        (sender as Button).BackColor = Color.FromArgb(218, 218, 218);
+    }
+
+    private void panel__sidebar__mouse_move(object sender, MouseEventArgs e)
+    {
+      initColorMode();
+      if (cmode == 1)
+        (sender as Button).BackColor = Color.FromArgb(20, 20, 20);
+      else
+        (sender as Button).BackColor = Color.FromArgb(229, 229, 229);
     }
   }
 }
