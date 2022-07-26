@@ -156,6 +156,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\binary.ico" />
+    <Content Include="Screenshots\les-dm-2vars.png" />
+    <Content Include="Screenshots\les-dm-3vars.png" />
+    <Content Include="Screenshots\les-dm-4vars-empty{.png" />
+    <Content Include="Screenshots\les-dm-4vars.png" />
+    <Content Include="Screenshots\les-lm-2vars.png" />
+    <Content Include="Screenshots\les-lm-3vars.png" />
+    <Content Include="Screenshots\les-lm-4vars-empty.png" />
+    <Content Include="Screenshots\les-lm-4vars.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
