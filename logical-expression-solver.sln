@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logical-expression-solver", "logical-expression-solver.csproj", "{192FB554-A795-4E66-8D91-7F56F21F550B}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Logical Expression Solver", "..\Logical Expression Solver\Logical Expression Solver.vdproj", "{CEBEE19E-1806-4CD1-8696-5341A1360161}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{192FB554-A795-4E66-8D91-7F56F21F550B}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{192FB554-A795-4E66-8D91-7F56F21F550B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{192FB554-A795-4E66-8D91-7F56F21F550B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEBEE19E-1806-4CD1-8696-5341A1360161}.Debug|Any CPU.ActiveCfg = Debug
+		{CEBEE19E-1806-4CD1-8696-5341A1360161}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
