@@ -1,6 +1,6 @@
 ﻿namespace karnaugh_map_solver
 {
-  partial class Form1
+  partial class Solver
   {
     /// <summary>
     /// Required designer variable.
@@ -34,7 +34,9 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
       this.ClientSize = new System.Drawing.Size(644, 372);
+      this.MaximizeBox = false;
       this.Name = "Form1";
       this.Text = "Form1";
       this.ResumeLayout(false);
