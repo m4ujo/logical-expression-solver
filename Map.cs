@@ -67,7 +67,7 @@ namespace karnaugh_map_solver
     {
       for (int i = 0; i < rows; i++)
         for (int j = 0; j < columns; j++)
-          DataMap[j, i].Value = ((Convert.ToBoolean(matrix.GetValue(i, j)) == true) ? 1 : 0)
+          DataMap[j, i].Value = ((Convert.ToBoolean(matrix.GetValue(i, j)) == true) ? 1 : 0);
     }
 
     public void MapColor()

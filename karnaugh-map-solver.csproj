@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Map.cs" />
     <Compile Include="Solver.cs">
       <SubType>Form</SubType>
     </Compile>
