@@ -79,6 +79,23 @@ namespace karnaugh_map_solver
       return new Tuple<string, string>(result.ToString(), coverage.ToSOPExpression());
     }
 
+    public static Tuple<string, string> PrintCoverages(this KMap map, bool only_min = true)
+    {
+      var resultT = new Tuple<string, string>("", "");
+      var coverages = map.Minimize();
+      if (coverages.Count == 0)
+        return new Tuple<string, string>("", "");
+      var min_cost = coverages.Min(c => c.Cost.Value);
+      foreach (var coverage in coverages)
+      {
+        if (only_min && coverage.Cost.Value > min_cost)
+          continue;
+        resultT = coverage.PrintCoverage();
+      }
+
+      return resultT;
+    }
+
     public static string ToBinaryString(this long num, int num_bits)
     {
       return Convert.ToString(num, 2).PadLeft(num_bits, '0');
