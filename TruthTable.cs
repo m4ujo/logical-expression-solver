@@ -20,7 +20,6 @@ namespace karnaugh_map_solver
     {
       this.nvars = nvars;
       comb = Convert.ToInt32(Math.Pow(2, nvars));
-      //op = op.Replace(" ", ""); op = op.Replace("^", "&&"); op = op.Replace("v", "||"); op = op.Replace("~", "!");
       this.op = op;
       tableValues = Array.CreateInstance(typeof(bool), comb, 5);
     }
