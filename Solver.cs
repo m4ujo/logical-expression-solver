@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace karnaugh_map_solver
 {
@@ -150,12 +151,24 @@ namespace karnaugh_map_solver
       tbx__function.Clear();
       cursorPositionTbx = 0;
     }
+    private string formatExpression(string expr)
+    {
+      expr = expr.Replace(".", "&&");
+      expr = expr.Replace("+", "||");
+      expr = expr.Replace("~", "!");
+      return expr;
+    }
 
     #endregion
 
     private void form__solver_Load(object sender, EventArgs e)
     {
       initColorMode(0);
+    }
+
+    private void btn__op_result_Click(object sender, EventArgs e)
+    {
+
     }
   }
 }

@@ -36,8 +36,6 @@
       this.lbl__title = new System.Windows.Forms.Label();
       this.panel__fill_table = new System.Windows.Forms.Panel();
       this.panel__top = new System.Windows.Forms.Panel();
-      this.btn__top_min = new System.Windows.Forms.Panel();
-      this.btn__top_close = new System.Windows.Forms.Panel();
       this.panel__equation = new System.Windows.Forms.Panel();
       this.panel__container_kmap = new System.Windows.Forms.Panel();
       this.panel__container_calculator = new System.Windows.Forms.Panel();
@@ -58,6 +56,8 @@
       this.panel__tbx__function = new System.Windows.Forms.Panel();
       this.tbx__function = new System.Windows.Forms.TextBox();
       this.panel__container_truthtable = new System.Windows.Forms.Panel();
+      this.btn__top_min = new System.Windows.Forms.Panel();
+      this.btn__top_close = new System.Windows.Forms.Panel();
       this.panel__sidebar.SuspendLayout();
       this.panel__top.SuspendLayout();
       this.panel__equation.SuspendLayout();
@@ -196,28 +196,6 @@
       this.panel__top.TabIndex = 72;
       this.panel__top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.handleFormMov);
       // 
-      // btn__top_min
-      // 
-      this.btn__top_min.BackColor = System.Drawing.Color.Transparent;
-      this.btn__top_min.BackgroundImage = global::karnaugh_map_solver.Properties.Resources.min_button_small;
-      this.btn__top_min.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-      this.btn__top_min.Location = new System.Drawing.Point(919, 13);
-      this.btn__top_min.Name = "btn__top_min";
-      this.btn__top_min.Size = new System.Drawing.Size(15, 15);
-      this.btn__top_min.TabIndex = 4;
-      this.btn__top_min.Click += new System.EventHandler(this.minEvent);
-      // 
-      // btn__top_close
-      // 
-      this.btn__top_close.BackColor = System.Drawing.Color.Transparent;
-      this.btn__top_close.BackgroundImage = global::karnaugh_map_solver.Properties.Resources.close_button_small;
-      this.btn__top_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.btn__top_close.Location = new System.Drawing.Point(940, 13);
-      this.btn__top_close.Name = "btn__top_close";
-      this.btn__top_close.Size = new System.Drawing.Size(15, 15);
-      this.btn__top_close.TabIndex = 3;
-      this.btn__top_close.Click += new System.EventHandler(this.exitEvent);
-      // 
       // panel__equation
       // 
       this.panel__equation.Controls.Add(this.panel__container_kmap);
@@ -330,6 +308,7 @@
       this.btn__op_result.TabIndex = 65;
       this.btn__op_result.Text = "=";
       this.btn__op_result.UseVisualStyleBackColor = false;
+      this.btn__op_result.Click += new System.EventHandler(this.btn__op_result_Click);
       // 
       // btn__op_and
       // 
@@ -359,7 +338,7 @@
       this.btn__op_not.Name = "btn__op_not";
       this.btn__op_not.Size = new System.Drawing.Size(40, 40);
       this.btn__op_not.TabIndex = 67;
-      this.btn__op_not.Text = "\'";
+      this.btn__op_not.Text = "~";
       this.btn__op_not.UseVisualStyleBackColor = false;
       this.btn__op_not.Click += new System.EventHandler(this.insertText);
       // 
@@ -498,7 +477,7 @@
       this.tbx__function.ShortcutsEnabled = false;
       this.tbx__function.Size = new System.Drawing.Size(164, 22);
       this.tbx__function.TabIndex = 50;
-      this.tbx__function.Text = "x.y+x";
+      this.tbx__function.Text = "~(x.y)+(x+~y)";
       this.tbx__function.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       this.tbx__function.Enter += new System.EventHandler(this.setLastCursorPos);
       this.tbx__function.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx__function_KeyPress);
@@ -511,6 +490,28 @@
       this.panel__container_truthtable.Name = "panel__container_truthtable";
       this.panel__container_truthtable.Size = new System.Drawing.Size(212, 459);
       this.panel__container_truthtable.TabIndex = 1;
+      // 
+      // btn__top_min
+      // 
+      this.btn__top_min.BackColor = System.Drawing.Color.Transparent;
+      this.btn__top_min.BackgroundImage = global::karnaugh_map_solver.Properties.Resources.min_button_small;
+      this.btn__top_min.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+      this.btn__top_min.Location = new System.Drawing.Point(919, 13);
+      this.btn__top_min.Name = "btn__top_min";
+      this.btn__top_min.Size = new System.Drawing.Size(15, 15);
+      this.btn__top_min.TabIndex = 4;
+      this.btn__top_min.Click += new System.EventHandler(this.minEvent);
+      // 
+      // btn__top_close
+      // 
+      this.btn__top_close.BackColor = System.Drawing.Color.Transparent;
+      this.btn__top_close.BackgroundImage = global::karnaugh_map_solver.Properties.Resources.close_button_small;
+      this.btn__top_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.btn__top_close.Location = new System.Drawing.Point(940, 13);
+      this.btn__top_close.Name = "btn__top_close";
+      this.btn__top_close.Size = new System.Drawing.Size(15, 15);
+      this.btn__top_close.TabIndex = 3;
+      this.btn__top_close.Click += new System.EventHandler(this.exitEvent);
       // 
       // form__solver
       // 
