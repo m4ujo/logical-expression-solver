@@ -13,7 +13,7 @@ namespace karnaugh_map_solver
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new solver_form());
+      Application.Run(new form__solver());
     }
   }
 }

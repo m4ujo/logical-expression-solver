@@ -108,5 +108,20 @@
   <ItemGroup>
     <None Include="Resources\min-button-small.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-day-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dark-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sun-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-luna-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mrd.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
