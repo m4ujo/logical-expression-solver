@@ -111,8 +111,5 @@
   <ItemGroup>
     <None Include="Resources\min-button-small.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="mrd.txt" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
