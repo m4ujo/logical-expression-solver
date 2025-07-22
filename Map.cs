@@ -8,22 +8,23 @@ namespace karnaugh_map_solver
   {
     public int columns { get; set; }
     public int rows { get; set; }
-    public TruthTable truthT;
-    public Array matrix;
-    public DataGridView DataMap { get; set; }
+    public TruthTable truthT { get; set; }
+    public Array matrix { get; set; }
+    public DataGridView map { get; set; }
     public Color c { get; set; }
+    public Color sc { get; set; }
 
-    public Map(TruthTable truthT)
+    public Map(TruthTable truthT, DataGridView map)
     {
       this.truthT = truthT;
       if (this.truthT.nvars % 2 == 0)
-        rows = columns = Convert.ToInt32(Math.Sqrt(Math.Pow(2, this.truthT.nvars)));
+        rows = columns = (int)(Math.Sqrt(Math.Pow(2, this.truthT.nvars)));
       else
       {
-        columns = Convert.ToInt32(Math.Sqrt(Math.Pow(2, this.truthT.nvars + 1)));
+        columns = (int)(Math.Sqrt(Math.Pow(2, this.truthT.nvars + 1)));
         rows = columns / 2;
       }
-
+      this.map = map;
       matrix = Array.CreateInstance(typeof(bool), rows, columns);
     }
     public Array ChangeValues(Array f, int im, int iM)
@@ -61,26 +62,23 @@ namespace karnaugh_map_solver
           matrix.SetValue(truthT.tableValues.GetValue(index, truthT.nvars), i, j);
     }
 
-    public void CreateMap()
+    public void CreateMap(int cmode)
     {
-      for (int i = 0; i < rows; i++)
-        for (int j = 0; j < columns; j++)
-          DataMap[j, i].Value = ((Convert.ToBoolean(matrix.GetValue(i, j)) == true) ? 1 : 0);
-    }
+      c = (cmode == 0) ? ColorTranslator.FromHtml("#f09536") : ColorTranslator.FromHtml("#f1a33c");
+      sc = (cmode == 0) ? ColorTranslator.FromHtml("#ffffff") : ColorTranslator.FromHtml("#1e1e1e");
 
-    public void MapColor()
-    {
       for (int i = 0; i < rows; i++)
         for (int j = 0; j < columns; j++)
-          if (Convert.ToBoolean(DataMap[j, i].Value) == true)
-            DataMap[j, i].Style.BackColor = c;
-    }
+          map[j, i].Value = ((Convert.ToBoolean(matrix.GetValue(i, j)) == true) ? 1 : 0);
 
-    public void ClearMap()
-    {
       for (int i = 0; i < rows; i++)
         for (int j = 0; j < columns; j++)
-          DataMap[j, i].Style.BackColor = Color.FromArgb(61, 61, 61);
+          map[j, i].Style.BackColor = sc;
+
+      for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+          if (Convert.ToBoolean(map[j, i].Value) == true)
+            map[j, i].Style.BackColor = c;
     }
   }
 }

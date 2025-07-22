@@ -15,37 +15,39 @@ namespace karnaugh_map_solver
     public string op { get; set; }
     public DataGridView table { get; set; }
     public Color c { get; set; }
+    public Color sc { get; set; }
 
-    public TruthTable(int nvars, string op)
+    public TruthTable(int nvars, string op, DataGridView table)
     {
       this.nvars = nvars;
-      comb = Convert.ToInt32(Math.Pow(2, nvars));
+      comb = (int)Math.Pow(2, nvars);
       this.op = op;
       tableValues = Array.CreateInstance(typeof(bool), comb, 5);
+      this.table = table;
     }
 
-    public bool Operations(bool x, bool y, bool z, bool w)
+    public bool Operations(bool a, bool b, bool c, bool d)
     {
-      bool temp = false;
       try
       {
-        if (nvars == 2) temp = Eval.Execute<bool>(op, new { x, y });
-        if (nvars == 3) temp = Eval.Execute<bool>(op, new { x, y, z });
-        if (nvars == 4) temp = Eval.Execute<bool>(op, new { x, y, z, w });
+        return
+          (nvars == 2) ? Eval.Execute<bool>(op, new { a, b }) :
+          (nvars == 3) ? Eval.Execute<bool>(op, new { a, b, c }) :
+          (nvars == 4) ? Eval.Execute<bool>(op, new { a, b, c, d }) :
+          false;
       }
       catch (Exception ex)
       {
-        Console.WriteLine(ex.Message);
         verif = true;
       }
-      return temp;
+      return false;
     }
 
     public void InsertValues()
     {
       int temp;
       int div = 1;
-      bool value = true, x, y, z, w, F;
+      bool value = true, a, b, c, d, F;
 
       for (int indexV = 0; indexV < nvars; indexV++)
       {
@@ -55,26 +57,29 @@ namespace karnaugh_map_solver
           if (indexXYZW % temp == 0)
             value = !value;
           tableValues.SetValue(value, indexXYZW, indexV);
-          x = Convert.ToBoolean(tableValues.GetValue(indexXYZW, 0));
-          y = Convert.ToBoolean(tableValues.GetValue(indexXYZW, 1));
-          z = Convert.ToBoolean(tableValues.GetValue(indexXYZW, 2));
-          w = Convert.ToBoolean(tableValues.GetValue(indexXYZW, 3));
-          F = Operations(x, y, z, w);
+          a = (bool)tableValues.GetValue(indexXYZW, 0);
+          b = (bool)tableValues.GetValue(indexXYZW, 1);
+          c = (bool)tableValues.GetValue(indexXYZW, 2);
+          d = (bool)tableValues.GetValue(indexXYZW, 3);
+          F = Operations(a, b, c, d);
           tableValues.SetValue(F, indexXYZW, nvars);
         }
         div *= 2;
       }
     }
 
-    public void CreateTable()
+    public void CreateTable(int cmode)
     {
+      c = (cmode == 0) ? ColorTranslator.FromHtml("#f09536") : ColorTranslator.FromHtml("#f1a33c");
+      sc = (cmode == 0) ? ColorTranslator.FromHtml("#ffffff") : ColorTranslator.FromHtml("#1e1e1e");
+
       for (int i = 0; i < comb; i++)
         for (int j = 0; j < nvars + 1; j++)
-          table[j, i].Value = ((Convert.ToBoolean(tableValues.GetValue(i, j)) == true) ? 1 : 0);
+          table[j, i].Value = ((bool)(tableValues.GetValue(i, j)) == true) ? 1 : 0;
       for (int i = 0; i < comb; i++)
-        table[nvars, i].Style.BackColor = Color.FromArgb(255, 255, 255);
+        table[nvars, i].Style.BackColor = sc;
       for (int i = 0; i < comb; i++)
-        if ((Convert.ToBoolean(tableValues.GetValue(i, nvars)) == true))
+        if ((bool)tableValues.GetValue(i, nvars) == true)
           table[nvars, i].Style.BackColor = c;
     }
   }
