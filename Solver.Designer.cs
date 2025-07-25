@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form__solver));
       this.panel__sidebar = new System.Windows.Forms.Panel();
       this.panel__fill_table = new System.Windows.Forms.Panel();
       this.lbl__change_mode = new System.Windows.Forms.Button();
@@ -558,8 +559,10 @@
       this.Controls.Add(this.panel__sidebar);
       this.Controls.Add(this.panel__equation);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximizeBox = false;
       this.Name = "form__solver";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "LES - Equation";
       this.Load += new System.EventHandler(this.form__solver_Load);
       this.panel__sidebar.ResumeLayout(false);
