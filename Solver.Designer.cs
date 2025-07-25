@@ -29,17 +29,19 @@
     private void InitializeComponent()
     {
       this.panel__sidebar = new System.Windows.Forms.Panel();
+      this.panel__fill_table = new System.Windows.Forms.Panel();
       this.lbl__change_mode = new System.Windows.Forms.Button();
       this.lbl__exit = new System.Windows.Forms.Button();
-      this.lbl__fill_table = new System.Windows.Forms.Button();
-      this.lbl__equation = new System.Windows.Forms.Button();
       this.lbl__title = new System.Windows.Forms.Label();
-      this.panel__fill_table = new System.Windows.Forms.Panel();
       this.panel__top = new System.Windows.Forms.Panel();
       this.btn__top_min = new System.Windows.Forms.Panel();
       this.btn__top_close = new System.Windows.Forms.Panel();
       this.panel__equation = new System.Windows.Forms.Panel();
       this.panel__container_kmap = new System.Windows.Forms.Panel();
+      this.panel__simpl_expr = new System.Windows.Forms.Panel();
+      this.panel__tbx__simpl__expr = new System.Windows.Forms.Panel();
+      this.tbx__simpl_expr = new System.Windows.Forms.TextBox();
+      this.lbl__simpl_expr = new System.Windows.Forms.Label();
       this.panel__container_calculator = new System.Windows.Forms.Panel();
       this.panel__calculator = new System.Windows.Forms.Panel();
       this.panel__nud__n_vars = new System.Windows.Forms.Panel();
@@ -60,37 +62,41 @@
       this.panel__tbx__function = new System.Windows.Forms.Panel();
       this.tbx__function = new System.Windows.Forms.TextBox();
       this.panel__container_truthtable = new System.Windows.Forms.Panel();
-      this.panel__simpl_expr = new System.Windows.Forms.Panel();
-      this.lbl__simpl_expr = new System.Windows.Forms.Label();
-      this.panel__tbx__simpl__expr = new System.Windows.Forms.Panel();
-      this.tbx__simpl_expr = new System.Windows.Forms.TextBox();
       this.panel__sidebar.SuspendLayout();
       this.panel__top.SuspendLayout();
       this.panel__equation.SuspendLayout();
       this.panel__container_kmap.SuspendLayout();
+      this.panel__simpl_expr.SuspendLayout();
+      this.panel__tbx__simpl__expr.SuspendLayout();
       this.panel__container_calculator.SuspendLayout();
       this.panel__calculator.SuspendLayout();
       this.panel__nud__n_vars.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.nud__n_vars)).BeginInit();
       this.panel__tbx__function.SuspendLayout();
-      this.panel__simpl_expr.SuspendLayout();
-      this.panel__tbx__simpl__expr.SuspendLayout();
       this.SuspendLayout();
       // 
       // panel__sidebar
       // 
       this.panel__sidebar.BackColor = System.Drawing.Color.Transparent;
+      this.panel__sidebar.Controls.Add(this.panel__fill_table);
       this.panel__sidebar.Controls.Add(this.lbl__change_mode);
       this.panel__sidebar.Controls.Add(this.lbl__exit);
-      this.panel__sidebar.Controls.Add(this.lbl__fill_table);
-      this.panel__sidebar.Controls.Add(this.lbl__equation);
       this.panel__sidebar.Controls.Add(this.lbl__title);
-      this.panel__sidebar.Controls.Add(this.panel__fill_table);
       this.panel__sidebar.Location = new System.Drawing.Point(0, 0);
       this.panel__sidebar.Name = "panel__sidebar";
       this.panel__sidebar.Size = new System.Drawing.Size(230, 650);
       this.panel__sidebar.TabIndex = 0;
       this.panel__sidebar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.handleFormMov);
+      // 
+      // panel__fill_table
+      // 
+      this.panel__fill_table.BackColor = System.Drawing.Color.Black;
+      this.panel__fill_table.Enabled = false;
+      this.panel__fill_table.Location = new System.Drawing.Point(229, 41);
+      this.panel__fill_table.Name = "panel__fill_table";
+      this.panel__fill_table.Size = new System.Drawing.Size(972, 609);
+      this.panel__fill_table.TabIndex = 72;
+      this.panel__fill_table.Visible = false;
       // 
       // lbl__change_mode
       // 
@@ -101,7 +107,7 @@
       this.lbl__change_mode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.lbl__change_mode.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lbl__change_mode.ForeColor = System.Drawing.Color.Black;
-      this.lbl__change_mode.Location = new System.Drawing.Point(0, 275);
+      this.lbl__change_mode.Location = new System.Drawing.Point(0, 533);
       this.lbl__change_mode.Margin = new System.Windows.Forms.Padding(0);
       this.lbl__change_mode.Name = "lbl__change_mode";
       this.lbl__change_mode.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
@@ -121,7 +127,7 @@
       this.lbl__exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.lbl__exit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lbl__exit.ForeColor = System.Drawing.Color.Black;
-      this.lbl__exit.Location = new System.Drawing.Point(0, 317);
+      this.lbl__exit.Location = new System.Drawing.Point(0, 580);
       this.lbl__exit.Margin = new System.Windows.Forms.Padding(0);
       this.lbl__exit.Name = "lbl__exit";
       this.lbl__exit.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
@@ -131,47 +137,6 @@
       this.lbl__exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.lbl__exit.UseVisualStyleBackColor = false;
       this.lbl__exit.Click += new System.EventHandler(this.exitEvent);
-      // 
-      // lbl__fill_table
-      // 
-      this.lbl__fill_table.BackColor = System.Drawing.Color.Transparent;
-      this.lbl__fill_table.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.lbl__fill_table.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.lbl__fill_table.FlatAppearance.BorderSize = 0;
-      this.lbl__fill_table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.lbl__fill_table.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbl__fill_table.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-      this.lbl__fill_table.Location = new System.Drawing.Point(0, 233);
-      this.lbl__fill_table.Margin = new System.Windows.Forms.Padding(0);
-      this.lbl__fill_table.Name = "lbl__fill_table";
-      this.lbl__fill_table.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-      this.lbl__fill_table.Size = new System.Drawing.Size(230, 42);
-      this.lbl__fill_table.TabIndex = 2;
-      this.lbl__fill_table.Text = "Truthtable filling";
-      this.lbl__fill_table.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.lbl__fill_table.UseVisualStyleBackColor = false;
-      this.lbl__fill_table.Click += new System.EventHandler(this.lbl__fill_table_Click);
-      // 
-      // lbl__equation
-      // 
-      this.lbl__equation.BackColor = System.Drawing.Color.Transparent;
-      this.lbl__equation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.lbl__equation.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.lbl__equation.FlatAppearance.BorderSize = 0;
-      this.lbl__equation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.lbl__equation.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbl__equation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-      this.lbl__equation.Location = new System.Drawing.Point(0, 191);
-      this.lbl__equation.Margin = new System.Windows.Forms.Padding(0);
-      this.lbl__equation.Name = "lbl__equation";
-      this.lbl__equation.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-      this.lbl__equation.Size = new System.Drawing.Size(230, 42);
-      this.lbl__equation.TabIndex = 1;
-      this.lbl__equation.Tag = "active";
-      this.lbl__equation.Text = "Equation";
-      this.lbl__equation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.lbl__equation.UseVisualStyleBackColor = false;
-      this.lbl__equation.Click += new System.EventHandler(this.lbl__equation_Click);
       // 
       // lbl__title
       // 
@@ -184,15 +149,6 @@
       this.lbl__title.Size = new System.Drawing.Size(137, 96);
       this.lbl__title.TabIndex = 0;
       this.lbl__title.Text = "Logical\r\nExpression\r\nSolver";
-      // 
-      // panel__fill_table
-      // 
-      this.panel__fill_table.Enabled = false;
-      this.panel__fill_table.Location = new System.Drawing.Point(229, 41);
-      this.panel__fill_table.Name = "panel__fill_table";
-      this.panel__fill_table.Size = new System.Drawing.Size(972, 609);
-      this.panel__fill_table.TabIndex = 72;
-      this.panel__fill_table.Visible = false;
       // 
       // panel__top
       // 
@@ -245,6 +201,50 @@
       this.panel__container_kmap.Name = "panel__container_kmap";
       this.panel__container_kmap.Size = new System.Drawing.Size(516, 609);
       this.panel__container_kmap.TabIndex = 2;
+      // 
+      // panel__simpl_expr
+      // 
+      this.panel__simpl_expr.Controls.Add(this.panel__tbx__simpl__expr);
+      this.panel__simpl_expr.Controls.Add(this.lbl__simpl_expr);
+      this.panel__simpl_expr.Location = new System.Drawing.Point(78, 535);
+      this.panel__simpl_expr.Name = "panel__simpl_expr";
+      this.panel__simpl_expr.Size = new System.Drawing.Size(383, 43);
+      this.panel__simpl_expr.TabIndex = 0;
+      // 
+      // panel__tbx__simpl__expr
+      // 
+      this.panel__tbx__simpl__expr.BackColor = System.Drawing.Color.WhiteSmoke;
+      this.panel__tbx__simpl__expr.Controls.Add(this.tbx__simpl_expr);
+      this.panel__tbx__simpl__expr.Location = new System.Drawing.Point(154, 7);
+      this.panel__tbx__simpl__expr.Name = "panel__tbx__simpl__expr";
+      this.panel__tbx__simpl__expr.Size = new System.Drawing.Size(213, 30);
+      this.panel__tbx__simpl__expr.TabIndex = 76;
+      // 
+      // tbx__simpl_expr
+      // 
+      this.tbx__simpl_expr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.tbx__simpl_expr.BackColor = System.Drawing.Color.WhiteSmoke;
+      this.tbx__simpl_expr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.tbx__simpl_expr.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tbx__simpl_expr.ForeColor = System.Drawing.Color.Black;
+      this.tbx__simpl_expr.Location = new System.Drawing.Point(11, 4);
+      this.tbx__simpl_expr.Name = "tbx__simpl_expr";
+      this.tbx__simpl_expr.ReadOnly = true;
+      this.tbx__simpl_expr.ShortcutsEnabled = false;
+      this.tbx__simpl_expr.Size = new System.Drawing.Size(193, 22);
+      this.tbx__simpl_expr.TabIndex = 50;
+      // 
+      // lbl__simpl_expr
+      // 
+      this.lbl__simpl_expr.AutoSize = true;
+      this.lbl__simpl_expr.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lbl__simpl_expr.Location = new System.Drawing.Point(10, 14);
+      this.lbl__simpl_expr.Name = "lbl__simpl_expr";
+      this.lbl__simpl_expr.Size = new System.Drawing.Size(138, 17);
+      this.lbl__simpl_expr.TabIndex = 75;
+      this.lbl__simpl_expr.Text = "Simplified expression:";
       // 
       // panel__container_calculator
       // 
@@ -543,50 +543,6 @@
       this.panel__container_truthtable.Size = new System.Drawing.Size(166, 609);
       this.panel__container_truthtable.TabIndex = 1;
       // 
-      // panel__simpl_expr
-      // 
-      this.panel__simpl_expr.Controls.Add(this.panel__tbx__simpl__expr);
-      this.panel__simpl_expr.Controls.Add(this.lbl__simpl_expr);
-      this.panel__simpl_expr.Location = new System.Drawing.Point(78, 535);
-      this.panel__simpl_expr.Name = "panel__simpl_expr";
-      this.panel__simpl_expr.Size = new System.Drawing.Size(383, 43);
-      this.panel__simpl_expr.TabIndex = 0;
-      // 
-      // lbl__simpl_expr
-      // 
-      this.lbl__simpl_expr.AutoSize = true;
-      this.lbl__simpl_expr.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbl__simpl_expr.Location = new System.Drawing.Point(10, 14);
-      this.lbl__simpl_expr.Name = "lbl__simpl_expr";
-      this.lbl__simpl_expr.Size = new System.Drawing.Size(138, 17);
-      this.lbl__simpl_expr.TabIndex = 75;
-      this.lbl__simpl_expr.Text = "Simplified expression:";
-      // 
-      // panel__tbx__simpl__expr
-      // 
-      this.panel__tbx__simpl__expr.BackColor = System.Drawing.Color.WhiteSmoke;
-      this.panel__tbx__simpl__expr.Controls.Add(this.tbx__simpl_expr);
-      this.panel__tbx__simpl__expr.Location = new System.Drawing.Point(154, 7);
-      this.panel__tbx__simpl__expr.Name = "panel__tbx__simpl__expr";
-      this.panel__tbx__simpl__expr.Size = new System.Drawing.Size(213, 30);
-      this.panel__tbx__simpl__expr.TabIndex = 76;
-      // 
-      // tbx__simpl_expr
-      // 
-      this.tbx__simpl_expr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-      this.tbx__simpl_expr.BackColor = System.Drawing.Color.WhiteSmoke;
-      this.tbx__simpl_expr.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.tbx__simpl_expr.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tbx__simpl_expr.ForeColor = System.Drawing.Color.Black;
-      this.tbx__simpl_expr.Location = new System.Drawing.Point(11, 4);
-      this.tbx__simpl_expr.Name = "tbx__simpl_expr";
-      this.tbx__simpl_expr.ReadOnly = true;
-      this.tbx__simpl_expr.ShortcutsEnabled = false;
-      this.tbx__simpl_expr.Size = new System.Drawing.Size(193, 22);
-      this.tbx__simpl_expr.TabIndex = 50;
-      // 
       // form__solver
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,8 +551,8 @@
       this.BackColor = System.Drawing.Color.White;
       this.ClientSize = new System.Drawing.Size(1200, 650);
       this.Controls.Add(this.panel__top);
-      this.Controls.Add(this.panel__equation);
       this.Controls.Add(this.panel__sidebar);
+      this.Controls.Add(this.panel__equation);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
       this.MaximizeBox = false;
       this.Name = "form__solver";
@@ -607,6 +563,10 @@
       this.panel__top.ResumeLayout(false);
       this.panel__equation.ResumeLayout(false);
       this.panel__container_kmap.ResumeLayout(false);
+      this.panel__simpl_expr.ResumeLayout(false);
+      this.panel__simpl_expr.PerformLayout();
+      this.panel__tbx__simpl__expr.ResumeLayout(false);
+      this.panel__tbx__simpl__expr.PerformLayout();
       this.panel__container_calculator.ResumeLayout(false);
       this.panel__calculator.ResumeLayout(false);
       this.panel__calculator.PerformLayout();
@@ -614,10 +574,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.nud__n_vars)).EndInit();
       this.panel__tbx__function.ResumeLayout(false);
       this.panel__tbx__function.PerformLayout();
-      this.panel__simpl_expr.ResumeLayout(false);
-      this.panel__simpl_expr.PerformLayout();
-      this.panel__tbx__simpl__expr.ResumeLayout(false);
-      this.panel__tbx__simpl__expr.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -626,8 +582,6 @@
 
     private System.Windows.Forms.Panel panel__sidebar;
     private System.Windows.Forms.Label lbl__title;
-    private System.Windows.Forms.Button lbl__equation;
-    private System.Windows.Forms.Button lbl__fill_table;
     private System.Windows.Forms.Button lbl__exit;
     private System.Windows.Forms.Panel btn__top_min;
     private System.Windows.Forms.Panel btn__top_close;

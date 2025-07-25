@@ -9,6 +9,7 @@ namespace karnaugh_map_solver
   public partial class form__solver : Form
   {
     #region Variables
+
     private bool cmodeVald { get; set; } = true;
     private int cmode { get; set; } = 1;
     private int cursorPositionTbx { get; set; }
@@ -40,10 +41,7 @@ namespace karnaugh_map_solver
 
     #endregion
 
-    public form__solver()
-    {
-      InitializeComponent();
-    }
+    #region Calculator
 
     #region FormBehavior
 
@@ -152,7 +150,7 @@ namespace karnaugh_map_solver
 
     #region PanelCalculator
 
-    private void initPanelCalculator ()
+    private void initPanelCalculator()
     {
       panel__calculator.Left = (panel__container_calculator.ClientSize.Width - panel__calculator.Width) / 2;
       panel__calculator.Top = (panel__container_calculator.ClientSize.Height - panel__calculator.Height) / 2;
@@ -326,12 +324,19 @@ namespace karnaugh_map_solver
       dgv__map.Size = new Size(dgv__map.Columns.Count * cellSize + dgv__map.RowHeadersWidth, dgv__map.Rows.Count * cellSize + dgv__map.ColumnHeadersHeight);
       dgv__map.Left = (panel__container_kmap.ClientSize.Width - dgv__map.Width) / 2;
       dgv__map.Top = (panel__container_kmap.ClientSize.Height - dgv__map.Height) / 2;
-      
+
       panel__simpl_expr.Location = new Point((panel__container_kmap.ClientSize.Width - panel__simpl_expr.Width) / 2, dgv__map.Top + dgv__map.Height + 30);
       panel__container_kmap.Controls.Add(dgv__map);
     }
 
     #endregion
+
+    #endregion
+
+    public form__solver()
+    {
+      InitializeComponent();
+    }
 
     private void Calculate()
     {
