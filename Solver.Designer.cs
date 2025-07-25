@@ -113,10 +113,12 @@
       this.lbl__change_mode.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
       this.lbl__change_mode.Size = new System.Drawing.Size(230, 42);
       this.lbl__change_mode.TabIndex = 73;
-      this.lbl__change_mode.Text = "Dark Mode";
+      this.lbl__change_mode.Text = "Light Mode";
       this.lbl__change_mode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.lbl__change_mode.UseVisualStyleBackColor = false;
       this.lbl__change_mode.Click += new System.EventHandler(this.lbl__change_mode_Click);
+      this.lbl__change_mode.MouseLeave += new System.EventHandler(this.panel__sidebar__mouse_leave);
+      this.lbl__change_mode.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel__sidebar__mouse_move);
       // 
       // lbl__exit
       // 
@@ -137,6 +139,8 @@
       this.lbl__exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.lbl__exit.UseVisualStyleBackColor = false;
       this.lbl__exit.Click += new System.EventHandler(this.exitEvent);
+      this.lbl__exit.MouseLeave += new System.EventHandler(this.panel__sidebar__mouse_leave);
+      this.lbl__exit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel__sidebar__mouse_move);
       // 
       // lbl__title
       // 
